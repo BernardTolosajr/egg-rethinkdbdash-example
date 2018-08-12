@@ -1,6 +1,6 @@
-# example-api
+# rethinkdbdash-example-api
 
-egg framework example api
+Egg framework rethinkdbdash example
 
 ## QuickStart
 
