@@ -6,5 +6,7 @@
 module.exports = app => {
   const { router, controller } = app;
   router.get('/', controller.home.index);
-  router.post('/channels', controller.smashers.create);
+  router.post('/smashers', controller.smashers.create);
+  router.get('/smashers', controller.smashers.index);
+  router.put('/smashers/:id', controller.smashers.update);
 };

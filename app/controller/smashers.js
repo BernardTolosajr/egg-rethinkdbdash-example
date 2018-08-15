@@ -10,6 +10,21 @@ class SmashersController extends Controller {
     }).run()
     this.ctx.body = result;
   }
+
+  async index() {
+    const smashers = await this.app.rethinkdbdash.table('smashers').run();
+    this.ctx.body = smashers;
+  }
+
+  async update() {
+    const id = this.ctx.params.id;
+    const { name } = this.ctx.request.body;
+    const result = await this.app.rethinkdbdash
+        .table('smashers').get(id).update({ name })
+        .run();
+
+    this.ctx.body = result;
+  }
 }
 
 module.exports = SmashersController;
