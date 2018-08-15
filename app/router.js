@@ -9,4 +9,5 @@ module.exports = app => {
   router.post('/smashers', controller.smashers.create);
   router.get('/smashers', controller.smashers.index);
   router.put('/smashers/:id', controller.smashers.update);
+  router.delete('/smashers/:id', controller.smashers.delete);
 };

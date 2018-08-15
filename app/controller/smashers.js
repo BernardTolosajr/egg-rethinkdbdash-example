@@ -22,7 +22,14 @@ class SmashersController extends Controller {
     const result = await this.app.rethinkdbdash
         .table('smashers').get(id).update({ name })
         .run();
+    this.ctx.body = result;
+  }
 
+  async delete() {
+    const id = this.ctx.params.id;
+    const result = await this.app.rethinkdbdash
+        .table('smashers').get(id).delete()
+        .run();
     this.ctx.body = result;
   }
 }
